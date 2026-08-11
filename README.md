@@ -1,6 +1,6 @@
 # NOVA — Scroll-Driven Product Experience
 
-A laptop product page built around scroll-based animation.
+A laptop product page built around scroll-based animation. 
 
 The goal of this project was to create a product experience where scrolling controls the visual story instead of simply moving between sections.
 
