@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+
+<html class="dark scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NOVA - Power that thinks ahead.</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&amp;family=Hanken+Grotesk:wght@300..700&amp;family=Geist:wght@300..700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                            "on-primary-fixed-variant": "#474646",
+                            "secondary-container": "#0566d9",
+                            "inverse-surface": "#e5e2e1",
+                            "on-error": "#690005",
+                            "tertiary-fixed": "#dde3eb",
+                            "tertiary-container": "#020509",
+                            "tertiary": "#c1c7cf",
+                            "surface-bright": "#3a3939",
+                            "secondary-fixed-dim": "#adc6ff",
+                            "on-secondary-fixed-variant": "#004395",
+                            "primary": "#c9c6c5",
+                            "on-error-container": "#ffdad6",
+                            "surface-container-high": "#2a2a2a",
+                            "on-primary": "#313030",
+                            "secondary": "#adc6ff",
+                            "outline": "#8e9192",
+                            "error": "#ffb4ab",
+                            "primary-fixed": "#e5e2e1",
+                            "error-container": "#93000a",
+                            "inverse-on-surface": "#313030",
+                            "on-tertiary-container": "#71787f",
+                            "inverse-primary": "#5f5e5e",
+                            "secondary-fixed": "#d8e2ff",
+                            "on-secondary-fixed": "#001a42",
+                            "tertiary-fixed-dim": "#c1c7cf",
+                            "on-surface-variant": "#c4c7c7",
+                            "surface-container-highest": "#353534",
+                            "on-background": "#e5e2e1",
+                            "background": "#131313",
+                            "outline-variant": "#444748",
+                            "on-tertiary": "#2b3137",
+                            "surface-dim": "#131313",
+                            "on-secondary": "#002e6a",
+                            "on-secondary-container": "#e6ecff",
+                            "surface-container-low": "#1c1b1b",
+                            "surface-tint": "#c9c6c5",
+                            "surface-variant": "#353534",
+                            "surface-container-lowest": "#0e0e0e",
+                            "on-primary-fixed": "#1c1b1b",
+                            "surface": "#131313",
+                            "on-tertiary-fixed": "#161c22",
+                            "primary-container": "#050505",
+                            "on-primary-container": "#797777",
+                            "surface-container": "#201f1f",
+                            "on-tertiary-fixed-variant": "#41474e",
+                            "on-surface": "#e5e2e1",
+                            "primary-fixed-dim": "#c9c6c5"
+                    },
+                    "borderRadius": {
+                            "DEFAULT": "0.125rem",
+                            "lg": "0.25rem",
+                            "xl": "0.5rem",
+                            "full": "0.75rem"
+                    },
+                    "spacing": {
+                            "margin-desktop": "80px",
+                            "unit": "8px",
+                            "container-max": "1440px",
+                            "margin-mobile": "24px",
+                            "gutter": "32px"
+                    },
+                    "fontFamily": {
+                            "headline-lg": ["Sora", "sans-serif"],
+                            "headline-lg-mobile": ["Sora", "sans-serif"],
+                            "headline-xl": ["Sora", "sans-serif"],
+                            "headline-md": ["Sora", "sans-serif"],
+                            "label-sm": ["Geist", "sans-serif"],
+                            "body-md": ["Hanken Grotesk", "sans-serif"],
+                            "body-lg": ["Hanken Grotesk", "sans-serif"]
+                    },
+                    "fontSize": {
+                            "headline-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                            "headline-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                            "headline-xl": ["72px", {"lineHeight": "80px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                            "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                            "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                            "body-md": ["16px", {"lineHeight": "24px", "letterSpacing": "0", "fontWeight": "400"}],
+                            "body-lg": ["18px", {"lineHeight": "28px", "letterSpacing": "0", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #050505; /* Deep luxury dark background */
+            color: #e5e2e1;
+        }
+        .glass-panel {
+            background: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(24px);
+            border: 1px solid rgba(226, 232, 240, 0.1);
+        }
+        .glow-text {
+            text-shadow: 0 0 20px rgba(5, 102, 217, 0.4);
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /* Custom scrollbar for horizontal scroll area */
+        .hide-scroll::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scroll {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="antialiased overflow-x-hidden selection:bg-secondary-container selection:text-white">
+<!-- TopNavBar Shared Component -->
+<nav class="fixed z-50 flex justify-between items-center w-full px-margin-desktop py-4 mx-auto max-w-container-max bg-surface/80 dark:bg-surface/80 backdrop-blur-xl border-b border-white/10 top-0 left-0 right-0">
+<a class="font-headline-md text-headline-md font-bold tracking-tighter text-on-surface dark:text-on-surface" href="#">NOVA</a>
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-primary dark:text-primary font-bold border-b-2 border-primary pb-1 font-body-md text-body-md transition-transform scale-95 active:scale-90" href="#explore">Explore</a>
+<a class="text-on-surface/60 dark:text-on-surface/60 transition-colors hover:text-primary dark:hover:text-primary transition-all duration-300 font-body-md text-body-md" href="#specs">Specifications</a>
+<a class="text-on-surface/60 dark:text-on-surface/60 transition-colors hover:text-primary dark:hover:text-primary transition-all duration-300 font-body-md text-body-md" href="#buy">Buy</a>
+</div>
+<button class="bg-white text-black font-body-md px-6 py-2 rounded-full hover:bg-gray-200 transition-colors hidden md:block">Order Now</button>
+<button class="md:hidden text-white">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</nav>
+<main>
+<!-- 1. Hero -->
+<section class="relative min-h-screen flex items-center justify-center pt-24 overflow-hidden" id="explore">
+<div class="absolute inset-0 z-0 pointer-events-none">
+<div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background z-10"></div>
+<!-- Abstract atmospheric background placeholder -->
+<div class="w-full h-full bg-cover bg-center opacity-30 mix-blend-screen" data-alt="A dark, abstract cinematic background featuring deep blacks and subtle electric blue light streaks, creating a premium technology atmosphere suitable for a luxury laptop." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDOuYk6T7tB8F9Zphp4exIjGCGSnOw2OEFCSsxu3205n6v4cMhwF-YK4ljz_Ncw0pEi3pvsbZ-wk2MIbkgWFIkwbUJUs7CAOhTeU9EKga5rkk4SSIUxhvOR-tTkE5x9eYlivEzJSb5HTi1YtQJ9GDthBmU0UnO1QfwZZWcvQnClZKeaKCq9Ic0vHBngVjrlE-her4wiHrU-j3eQfzthZHdn3ArGbsMafEQNYTPntbrivrq9OIJvQ9tc');"></div>
+</div>
+<div class="relative z-10 text-center px-6 max-w-5xl mx-auto flex flex-col items-center">
+<h1 class="font-headline-xl text-headline-xl mb-6 tracking-tight text-white reveal">Power that thinks ahead.</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mb-12 reveal" style="transition-delay: 200ms;">The new Nova redefines what's possible in a portable architecture. Engineered for the infinite.</p>
+<div class="w-full max-w-4xl h-[50vh] md:h-[60vh] relative reveal" style="transition-delay: 400ms;">
+<img class="w-full h-full object-contain filter drop-shadow-2xl" data-alt="A cinematic, highly detailed 3D render of a sleek, dark aluminum laptop floating in a void, illuminated by soft blue edge lighting that highlights its impossibly thin profile." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIBFx0-rJkE1ZKbfP6bMEtiPV2QrNnQ00gsXApbR1clYWTQ6s9u-8gaLAjYmGDIKoOV2qM6k4S7D9F-W1Ne54Gf4_jOc27EBx-us5-61Q0GnwuQzho1sTGGHBR_RyuwnX7V1u29Z1mHyim23Gq2-MzKj_GIW9hTFVKyKNXAxv1bHfE8SaqFEFES_EYLfphS_ocqetXau38XtRhIMjBWzmJO2Mo0cTySiHOGKuRBnO9ubleMWmLO0M6"/>
+</div>
+</div>
+</section>
+<!-- 2. Introduction -->
+<section class="py-32 px-6 md:px-margin-desktop bg-surface-container-lowest">
+<div class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+<div class="order-2 md:order-1 reveal">
+<img class="w-full rounded-2xl object-cover h-[600px] border border-white/5 shadow-2xl" data-alt="A dramatic close-up of a premium dark laptop keyboard and trackpad, bathed in cool cinematic light, showcasing precision engineering and luxury materials." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0-BY8bfr2jRV9XFdfhmF7zTz10DaxXB-_oYO_glXhFyVsD-BN2ySH6nT2UEy5HIXRwRB_-SuzcCAQRtqlZRvYZQKKFTSipqs5ZUlEOcV9fOmTZFmUKkYRQLM5ZM8FX-iVm_qcLe3l1pAa6Ste37lkhyPEBVlnjOeAiE1rJocxT9GvvhF-SSX9S_XlQ7hB7HIX0deJlGAmIwqmNpdkV1MAHmEFS4Gb6M_EiwsL1gBhnMfNFVSQMEZ8"/>
+</div>
+<div class="order-1 md:order-2 flex flex-col justify-center space-y-8 reveal">
+<h2 class="font-headline-lg text-headline-lg text-white">Built for what comes next.</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+                        Forged from a single block of aerospace-grade aluminum, Nova is an exercise in uncompromising design. We stripped away everything unnecessary to leave only pure performance. The result is a machine that looks as infinite as the work you'll do on it.
+                    </p>
+<a class="inline-flex items-center space-x-2 text-secondary-container hover:text-secondary transition-colors font-body-md mt-4" href="#performance">
+<span>Discover Performance</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+</section>
+<!-- 3. Performance -->
+<section class="py-32 px-6 md:px-margin-desktop relative overflow-hidden" id="specs">
+<div class="absolute right-0 top-0 w-1/2 h-full bg-secondary-container/5 blur-[120px] rounded-full pointer-events-none"></div>
+<div class="max-w-container-max mx-auto text-center mb-24 reveal">
+<h2 class="font-headline-lg text-headline-lg text-white mb-6">M20 Architecture</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Unprecedented processing density.</p>
+</div>
+<div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="glass-panel p-10 rounded-2xl flex flex-col items-center text-center reveal" style="transition-delay: 100ms;">
+<div class="font-headline-xl text-headline-xl text-white mb-2">12</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Core CPU</div>
+</div>
+<div class="glass-panel p-10 rounded-2xl flex flex-col items-center text-center reveal" style="transition-delay: 200ms;">
+<div class="font-headline-xl text-headline-xl text-white mb-2">32<span class="text-3xl text-on-surface-variant">GB</span></div>
+<div class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Unified Memory</div>
+</div>
+<div class="glass-panel p-10 rounded-2xl flex flex-col items-center text-center reveal" style="transition-delay: 300ms;">
+<div class="font-headline-xl text-headline-xl text-white mb-2">4<span class="text-3xl text-on-surface-variant">TB</span></div>
+<div class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">SSD Storage</div>
+</div>
+</div>
+</section>
+<!-- 5. Display -->
+<section class="py-24 relative min-h-[80vh] flex items-center justify-center overflow-hidden">
+<!-- Fixed background image placeholder per instructions -->
+<div class="absolute inset-0 bg-cover bg-center z-0 scale-105 transform hover:scale-100 transition-transform duration-1000 ease-out" style="background-image: url('https://lh3.googleusercontent.com/aida/AP1WRLv5zYzggNRPwoSmS6iA5jShv4DB5OiQT7sBmNGF0_IlRHNPLZHRTz7bFmNy-mnD9h0e2SZ8mIQbkf4ycNd7XTTDlyjeIrjTcwtsu0VHSMgbJRCgFotXCtOmzAcF9ceDfipXv-GA9ceeUGdnkR9YTuWg14CQHOs8kOWh6388k5lTvy8eU0c4hpdn_89aAq3RXnk8LkMUd4j3Wr4HyogPO6UmiBHMrdvj5RA8pGS1Hl31cQd96VxobhSbJHo');">
+<div class="absolute inset-0 bg-black/40"></div>
+</div>
+<div class="relative z-10 text-center px-6 reveal">
+<h2 class="font-headline-xl text-headline-xl text-white mb-6 drop-shadow-lg">Infinite Canvas.</h2>
+<p class="font-body-lg text-body-lg text-white/90 max-w-xl mx-auto drop-shadow-md">
+                    16-inch Liquid Retina XDR display. <br/> Extreme Dynamic Range brings your work to life.
+                </p>
+</div>
+</section>
+<!-- 6. Design Gallery -->
+<section class="py-32 bg-surface-container-lowest overflow-hidden">
+<div class="px-6 md:px-margin-desktop max-w-container-max mx-auto mb-16 reveal">
+<h2 class="font-headline-lg text-headline-lg text-white">Obsessive detail.</h2>
+</div>
+<div class="flex overflow-x-auto hide-scroll px-6 md:px-margin-desktop gap-8 pb-8 snap-x snap-mandatory">
+<div class="snap-center shrink-0 w-[85vw] md:w-[60vw] h-[400px] md:h-[600px] rounded-2xl overflow-hidden relative">
+<img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AP1WRLssUnTK74eMgTJWQshboBAryBvnpOxrk6wikP1S7NfuIpOkTHpGoeoOnlDX-k1syV8JprXCm93o_bU4wrICCqbLztWiSddWi1AQiSB_bfFnuzKWkDh2GYdMWaSBEca7bLXqcdc6IYBfIGvhZlBuifWAPjSdNkDJz-30vJGLDuur3faX-FrjEHwmQINeI-B6EIi0M9dvYNQk3d8lUVjtxeckUeIgqifezLWzvPDJmngUDS0kp5BsTq2RqcY"/>
+<div class="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black/80 to-transparent">
+<p class="font-body-md text-white">Precision milled chassis.</p>
+</div>
+</div>
+<div class="snap-center shrink-0 w-[85vw] md:w-[60vw] h-[400px] md:h-[600px] rounded-2xl overflow-hidden relative">
+<img class="w-full h-full object-cover" data-alt="Macro photography of a sleek laptop hinge mechanism, showing ultra-tight tolerances and brushed dark metal textures under dramatic spotlighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAE1T9rJyLswUbjJWBh96qn0XmIS9usbpI_D20_voXvOcs9EjJOtd52NK_0GK647-Hndm5upZBIPEw3XOAIpKOMmyG7ZRMpbdojP5R_VbGnLH9ZfJVXf_w0emblGx2EqZHdDZ4g4rargWbDO-mXasIoCjZ5MwOi4z0uxZ6lFHQO55XtCbtj9j1ZkZOkJnMRzDfJrWzeKXyAr7px4uXD-K6eVYRjEEx5GYOVEvqUrSpCh2Din5D2gWJF"/>
+<div class="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black/80 to-transparent">
+<p class="font-body-md text-white">Silent articulated hinge.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- 10. Ecosystem -->
+<section class="py-32 px-6 md:px-margin-desktop relative">
+<div class="max-w-container-max mx-auto">
+<div class="text-center mb-20 reveal">
+<h2 class="font-headline-lg text-headline-lg text-white mb-4">Seamless Ecosystem</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Works instantly with all your devices.</p>
+</div>
+<div class="relative w-full max-w-5xl mx-auto rounded-3xl overflow-hidden glass-panel border border-white/5 reveal">
+<img class="w-full h-auto object-cover opacity-80 mix-blend-lighten" src="https://lh3.googleusercontent.com/aida/AP1WRLsKaXEVS8O7YneCLBkNhOq6VV5W1WJQLitwy1k0lSQc_fo7p_X5M8QLWcxHIqLU9a0UlsKzdcp-ZuqmAb0AlmWBfdsZD9jErzxcPOGP5zlOdKPFZb2misJWnpQoHpNXqSeut2wvpLd2OQKhu5PdnTevPtpd_Ti971uO0UnwGNdK3XSrYIAJonltLFxGpe87Ckr6QatXitM69dhs7V_UAb7XacJYCMaQd0p4Z4BFFxlUOAICOe7Ozru7E5c"/>
+</div>
+</div>
+</section>
+<!-- 11. Configurations -->
+<section class="py-32 px-6 md:px-margin-desktop bg-surface-container-lowest" id="buy">
+<div class="max-w-container-max mx-auto text-center mb-20 reveal">
+<h2 class="font-headline-lg text-headline-lg text-white">Choose your Nova.</h2>
+</div>
+<div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 items-end">
+<!-- Air -->
+<div class="glass-panel p-8 rounded-2xl flex flex-col reveal" style="transition-delay: 100ms;">
+<h3 class="font-headline-md text-white mb-2">Nova Air</h3>
+<p class="font-body-md text-on-surface-variant mb-8">Essential power.</p>
+<div class="font-headline-md text-white mb-8">From $1,199</div>
+<ul class="space-y-4 mb-8 text-sm font-body-md text-on-surface-variant flex-grow border-t border-white/10 pt-8">
+<li>8-Core CPU</li>
+<li>16GB Memory</li>
+<li>512GB Storage</li>
+</ul>
+<button class="w-full py-4 border border-white/20 rounded-full text-white hover:bg-white hover:text-black transition-colors font-body-md">Select</button>
+</div>
+<!-- Pro (Featured) -->
+<div class="glass-panel p-8 rounded-2xl flex flex-col border border-secondary-container relative reveal md:-translate-y-4 shadow-[0_0_30px_rgba(5,102,217,0.15)]" style="transition-delay: 200ms;">
+<div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-secondary-container text-white px-4 py-1 rounded-full font-label-sm text-xs tracking-wider uppercase">Most Popular</div>
+<h3 class="font-headline-md text-white mb-2 mt-4">Nova Pro</h3>
+<p class="font-body-md text-secondary mb-8">The perfect balance.</p>
+<div class="font-headline-md text-white mb-8">From $1,999</div>
+<ul class="space-y-4 mb-8 text-sm font-body-md text-on-surface-variant flex-grow border-t border-white/10 pt-8">
+<li>12-Core CPU</li>
+<li>32GB Memory</li>
+<li>1TB Storage</li>
+<li>Liquid Retina Display</li>
+</ul>
+<button class="w-full py-4 bg-white text-black rounded-full hover:bg-gray-200 transition-colors font-body-md">Select</button>
+</div>
+<!-- Ultra -->
+<div class="glass-panel p-8 rounded-2xl flex flex-col reveal" style="transition-delay: 300ms;">
+<h3 class="font-headline-md text-white mb-2">Nova Ultra</h3>
+<p class="font-body-md text-on-surface-variant mb-8">Maximized limits.</p>
+<div class="font-headline-md text-white mb-8">From $3,499</div>
+<ul class="space-y-4 mb-8 text-sm font-body-md text-on-surface-variant flex-grow border-t border-white/10 pt-8">
+<li>24-Core CPU</li>
+<li>128GB Memory</li>
+<li>4TB Storage</li>
+</ul>
+<button class="w-full py-4 border border-white/20 rounded-full text-white hover:bg-white hover:text-black transition-colors font-body-md">Select</button>
+</div>
+</div>
+</section>
+<!-- 14. Final Reveal -->
+<section class="py-0 relative h-[100vh] flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center z-0" style="background-image: url('https://lh3.googleusercontent.com/aida/AP1WRLsy3kmkwCQXJy7JPu0cXlCX8_eNjbkzcmbR0Kh0WpfQ5JF9sARzADWe-x6tvrY5-xrhou0JjTWjqiMvj6kXfFTgEEyq4t00oNjslUy3KoNC1u80zwDu9nYO2dJJq9y8hJNS0IwAlanWGVoHBqoYn9dIfhe2JDeMwrwLxIdMvWFDzgeikkeKt-nHV7Za1nmOqvZm6-TxQcJ_5yKkrSBs6DGq2FK-uNmFQz9eiwBHAKHuPVslnzuaRoDjQZ4');">
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest to-transparent z-10"></div>
+<div class="relative z-20 text-center mt-64 reveal">
+<h2 class="font-headline-xl text-headline-xl text-white mb-8">The Future is Here.</h2>
+<button class="bg-white text-black font-body-md px-10 py-4 rounded-full text-lg hover:scale-105 transition-transform duration-300">Order Nova Now</button>
+</div>
+</section>
+</main>
+<!-- Footer Shared Component -->
+<footer class="bg-surface-container-lowest dark:bg-surface-container-lowest w-full px-margin-desktop py-16 flex flex-col items-center space-y-12 max-w-container-max mx-auto border-t border-white/5 relative bottom-0">
+<div class="w-full text-center">
+<span class="font-headline-xl text-headline-xl font-black text-on-surface/5 dark:text-on-surface/5 uppercase tracking-widest block text-center w-full">NOVA</span>
+</div>
+<div class="flex flex-wrap justify-center gap-8 w-full max-w-3xl">
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary underline-offset-4 transition-all opacity-80 hover:opacity-100 uppercase tracking-widest" href="#">Product</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary underline-offset-4 transition-all opacity-80 hover:opacity-100 uppercase tracking-widest" href="#">Specifications</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary underline-offset-4 transition-all opacity-80 hover:opacity-100 uppercase tracking-widest" href="#">Support</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary underline-offset-4 transition-all opacity-80 hover:opacity-100 uppercase tracking-widest" href="#">Privacy Policy</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary underline-offset-4 transition-all opacity-80 hover:opacity-100 uppercase tracking-widest" href="#">Terms of Service</a>
+</div>
+<div class="font-label-sm text-label-sm text-on-surface/40 mt-8">
+            © 2024 NOVA. Engineered for the Infinite.
+        </div>
+</footer>
+<script>
+        // Simple intersection observer for scroll reveals
+        document.addEventListener("DOMContentLoaded", () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: "0px 0px -50px 0px"
+            });
+
+            document.querySelectorAll('.reveal').forEach((el) => {
+                observer.observe(el);
+            });
+        });
+    </script>
+</body></html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Nova — Premium laptop experience with scroll-driven animation and parallax effects.">
+  <title>Nova — Unleash the Future</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Hanken+Grotesk:wght@300;400;500;600&family=Geist:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav id="main-nav" class="nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <span class="logo-icon">✦</span>
+        <span class="logo-text">NOVA</span>
+      </a>
+      <div class="nav-links">
+        <a href="#hero" class="nav-link">Home</a>
+        <a href="#explore" class="nav-link">Explore</a>
+        <a href="#specs" class="nav-link">Specs</a>
+        <a href="#buy" class="nav-link nav-link-cta">Order Now</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section — Scroll-driven frame animation -->
+  <section id="hero" class="hero-section">
+    <div class="hero-sticky">
+      <!-- Canvas for frame animation -->
+      <canvas id="hero-canvas"></canvas>
+
+      <!-- Parallax text layers -->
+      <div class="hero-overlay">
+        <div class="hero-text hero-text-top" data-parallax-speed="0.3">
+          <p class="hero-eyebrow">Introducing</p>
+          <h1 class="hero-title">NOVA</h1>
+          <p class="hero-subtitle">Where Power Meets Elegance</p>
+        </div>
+
+        <div class="hero-text hero-text-mid" data-parallax-speed="0.6">
+          <p class="hero-tagline">Scroll to reveal</p>
+          <div class="scroll-indicator">
+            <div class="scroll-indicator-dot"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll progress bar -->
+      <div class="scroll-progress">
+        <div class="scroll-progress-bar" id="scroll-progress-bar"></div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- Introduction Section -->
+  <section id="explore" class="intro-section">
+    <div class="intro-container">
+      <div class="intro-image reveal">
+        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0-BY8bfr2jRV9XFdfhmF7zTz10DaxXB-_oYO_glXhFyVsD-BN2ySH6nT2UEy5HIXRwRB_-SuzcCAQRtqlZRvYZQKKFTSipqs5ZUlEOcV9fOmTZFmUKkYRQLM5ZM8FX-iVm_qcLe3l1pAa6Ste37lkhyPEBVlnjOeAiE1rJocxT9GvvhF-SSX9S_XlQ7hB7HIX0deJlGAmIwqmNpdkV1MAHmEFS4Gb6M_EiwsL1gBhnMfNFVSQMEZ8" alt="Nova Aluminum Body">
+      </div>
+      <div class="intro-text reveal" style="transition-delay: 0.2s">
+        <h2>Built for what comes next.</h2>
+        <p>Forged from a single block of aerospace-grade aluminum, Nova is an exercise in uncompromising design. We stripped away everything unnecessary to leave only pure performance. The result is a machine that looks as infinite as the work you'll do on it.</p>
+        <a href="#" class="intro-link">Discover Performance &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Performance Section -->
+  <section id="specs" class="performance-section">
+    <div class="perf-bg-blur"></div>
+    <div class="perf-header reveal">
+      <h2>M20 Architecture</h2>
+      <p>Unprecedented processing density.</p>
+    </div>
+    <div class="perf-grid">
+      <div class="perf-card glass-panel reveal" style="transition-delay: 0.1s">
+        <div class="perf-number"><span class="count-up" data-target="12">0</span></div>
+        <div class="perf-label">Core CPU</div>
+      </div>
+      <div class="perf-card glass-panel reveal" style="transition-delay: 0.2s">
+        <div class="perf-number"><span class="count-up" data-target="32">0</span></div>
+        <div class="perf-label">GB / Unified Memory</div>
+      </div>
+      <div class="perf-card glass-panel reveal" style="transition-delay: 0.3s">
+        <div class="perf-number"><span class="count-up" data-target="4">0</span></div>
+        <div class="perf-label">TB / SSD Storage</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Display Section -->
+  <section class="display-section">
+    <div class="display-bg">
+      <img src="https://lh3.googleusercontent.com/aida/AP1WRLv5zYzggNRPwoSmS6iA5jShv4DB5OiQT7sBmNGF0_IlRHNPLZHRTz7bFmNy-mnD9h0e2SZ8mIQbkf4ycNd7XTTDlyjeIrjTcwtsu0VHSMgbJRCgFotXCtOmzAcF9ceDfipXv-GA9ceeUGdnkR9YTuWg14CQHOs8kOWh6388k5lTvy8eU0c4hpdn_89aAq3RXnk8LkMUd4j3Wr4HyogPO6UmiBHMrdvj5RA8pGS1Hl31cQd96VxobhSbJHo" alt="Infinite Canvas Display">
+    </div>
+    <div class="display-overlay"></div>
+    <div class="display-content reveal">
+      <h2>Infinite Canvas.</h2>
+      <p>16-inch Liquid Retina XDR display. Extreme Dynamic Range brings your work to life.</p>
+    </div>
+  </section>
+
+  <!-- Design Gallery Section -->
+  <section class="gallery-section">
+    <h2 class="gallery-title reveal">Obsessive detail.</h2>
+    <div class="gallery-scroll reveal" style="transition-delay: 0.2s">
+      <div class="gallery-card">
+        <img src="https://lh3.googleusercontent.com/aida/AP1WRLssUnTK74eMgTJWQshboBAryBvnpOxrk6wikP1S7NfuIpOkTHpGoeoOnlDX-k1syV8JprXCm93o_bU4wrICCqbLztWiSddWi1AQiSB_bfFnuzKWkDh2GYdMWaSBEca7bLXqcdc6IYBfIGvhZlBuifWAPjSdNkDJz-30vJGLDuur3faX-FrjEHwmQINeI-B6EIi0M9dvYNQk3d8lUVjtxeckUeIgqifezLWzvPDJmngUDS0kp5BsTq2RqcY" alt="Precision milled chassis">
+        <div class="gallery-caption glass-panel">Precision milled chassis.</div>
+      </div>
+      <div class="gallery-card">
+        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAE1T9rJyLswUbjJWBh96qn0XmIS9usbpI_D20_voXvOcs9EjJOtd52NK_0GK647-Hndm5upZBIPEw3XOAIpKOMmyG7ZRMpbdojP5R_VbGnLH9ZfJVXf_w0emblGx2EqZHdDZ4g4rargWbDO-mXasIoCjZ5MwOi4z0uxZ6lFHQO55XtCbtj9j1ZkZOkJnMRzDfJrWzeKXyAr7px4uXD-K6eVYRjEEx5GYOVEvqUrSpCh2Din5D2gWJF" alt="Silent articulated hinge">
+        <div class="gallery-caption glass-panel">Silent articulated hinge.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ecosystem Section -->
+  <section class="ecosystem-section">
+    <div class="eco-header reveal">
+      <h2>Seamless Ecosystem</h2>
+      <p>Works instantly with all your devices.</p>
+    </div>
+    <div class="eco-container glass-panel reveal" style="transition-delay: 0.2s">
+      <img src="https://lh3.googleusercontent.com/aida/AP1WRLsKaXEVS8O7YneCLBkNhOq6VV5W1WJQLitwy1k0lSQc_fo7p_X5M8QLWcxHIqLU9a0UlsKzdcp-ZuqmAb0AlmWBfdsZD9jErzxcPOGP5zlOdKPFZb2misJWnpQoHpNXqSeut2wvpLd2OQKhu5PdnTevPtpd_Ti971uO0UnwGNdK3XSrYIAJonltLFxGpe87Ckr6QatXitM69dhs7V_UAb7XacJYCMaQd0p4Z4BFFxlUOAICOe7Ozru7E5c" alt="Seamless Ecosystem">
+    </div>
+  </section>
+
+  <!-- Configurations Section -->
+  <section id="buy" class="buy-section">
+    <h2 class="buy-title reveal">Choose your Nova.</h2>
+    <div class="buy-grid">
+      <div class="buy-card glass-panel reveal" style="transition-delay: 0.1s">
+        <h3>Nova Air</h3>
+        <p class="buy-desc">Essential power</p>
+        <p class="buy-price">From $1,199</p>
+        <ul class="buy-specs">
+          <li>8-Core CPU</li>
+          <li>16GB Memory</li>
+          <li>512GB Storage</li>
+        </ul>
+        <button class="btn-ghost">Select</button>
+      </div>
+      <div class="buy-card glass-panel featured reveal" style="transition-delay: 0.2s">
+        <div class="badge">Most Popular</div>
+        <h3>Nova Pro</h3>
+        <p class="buy-desc">The perfect balance</p>
+        <p class="buy-price">From $1,999</p>
+        <ul class="buy-specs">
+          <li>12-Core CPU</li>
+          <li>32GB Memory</li>
+          <li>1TB Storage</li>
+          <li>Liquid Retina Display</li>
+        </ul>
+        <button class="btn-solid">Select</button>
+      </div>
+      <div class="buy-card glass-panel reveal" style="transition-delay: 0.3s">
+        <h3>Nova Ultra</h3>
+        <p class="buy-desc">Maximized limits</p>
+        <p class="buy-price">From $3,499</p>
+        <ul class="buy-specs">
+          <li>24-Core CPU</li>
+          <li>128GB Memory</li>
+          <li>4TB Storage</li>
+        </ul>
+        <button class="btn-ghost">Select</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final Reveal / CTA Section -->
+  <section class="cta-section">
+    <div class="cta-bg">
+      <img src="https://lh3.googleusercontent.com/aida/AP1WRLsy3kmkwCQXJy7JPu0cXlCX8_eNjbkzcmbR0Kh0WpfQ5JF9sARzADWe-x6tvrY5-xrhou0JjTWjqiMvj6kXfFTgEEyq4t00oNjslUy3KoNC1u80zwDu9nYO2dJJq9y8hJNS0IwAlanWGVoHBqoYn9dIfhe2JDeMwrwLxIdMvWFDzgeikkeKt-nHV7Za1nmOqvZm6-TxQcJ_5yKkrSBs6DGq2FK-uNmFQz9eiwBHAKHuPVslnzuaRoDjQZ4" alt="Order Nova">
+    </div>
+    <div class="cta-overlay"></div>
+    <div class="cta-content reveal">
+      <h2>The Future is Here.</h2>
+      <button class="btn-cta">Order Nova Now</button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-bg-text">NOVA</div>
+    <div class="footer-links">
+      <a href="#">Product</a>
+      <a href="#">Specifications</a>
+      <a href="#">Support</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+    </div>
+    <div class="footer-copy">
+      &copy; 2024 NOVA. Engineered for the Infinite.
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
