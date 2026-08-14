@@ -48,7 +48,7 @@ This is one of the projects I'm using to improve my frontend skills, especially 
 
 ## 🔗 Project
 
-**GitHub:** [NOVA](https://github.com/kiran123-stack/NOVA)
+**GitHub:** [NOVA](https://kiran123-stack.github.io/NOVA/)
 
 ---
 
